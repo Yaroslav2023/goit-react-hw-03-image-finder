@@ -4,11 +4,14 @@ import cl from './imageGalleryItem.module.css';
 
 class ImageGalleryItem extends Component {
   render() {
-    return (
-      <li className={cl.ImageGalleryItem}>
-        <img className={cl.ImageGalleryItemImage} src="" alt="" />
-      </li>
-    );
+    const { images } = this.props;
+    return images.map(({ id, webformatURL }) => {
+      return (
+        <li className={cl.ImageGalleryItem} id={id}>
+          <img className={cl.ImageGalleryItemImage} src={webformatURL} alt="" />
+        </li>
+      );
+    });
   }
 }
 

@@ -3,6 +3,13 @@ import cl from './searchbar.module.css';
 // import PropTypes from 'prop-types';
 
 class Searchbar extends Component {
+  state = {
+    searchQuery: '',
+  };
+
+  handleinput = async e => {
+    await this.setState({ searchQuery: e.target.value });
+  };
   render() {
     return (
       <header className={cl.Searchbar}>
@@ -14,9 +21,11 @@ class Searchbar extends Component {
           <input
             className={cl.SearchFormInput}
             type="text"
+            value={this.state.searchQuery}
             autocomplete="off"
             autofocus
             placeholder="Search images and photos"
+            onChange={this.handleinput}
           />
         </form>
       </header>
