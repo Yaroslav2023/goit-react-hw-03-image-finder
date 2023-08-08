@@ -4,11 +4,16 @@ import cl from './imageGalleryItem.module.css';
 
 class ImageGalleryItem extends Component {
   render() {
-    const { images } = this.props;
+    const { images, onClick } = this.props;
     return images.map(({ id, webformatURL }) => {
       return (
-        <li className={cl.ImageGalleryItem} id={id}>
-          <img className={cl.ImageGalleryItemImage} src={webformatURL} alt="" />
+        <li key={id} className={cl.ImageGalleryItem}>
+          <img
+            className={cl.ImageGalleryItemImage}
+            src={webformatURL}
+            alt=""
+            onClick={onClick}
+          />
         </li>
       );
     });

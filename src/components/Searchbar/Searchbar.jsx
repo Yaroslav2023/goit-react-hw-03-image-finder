@@ -7,13 +7,19 @@ class Searchbar extends Component {
     searchQuery: '',
   };
 
-  handleinput = async e => {
-    await this.setState({ searchQuery: e.target.value });
+  handleinput = e => {
+    this.setState({ searchQuery: e.target.value });
   };
+
+  searchSubmit = e => {
+    e.preventDefault();
+    return this.props.onSubmit(this.state.searchQuery);
+  };
+
   render() {
     return (
       <header className={cl.Searchbar}>
-        <form className={cl.SearchForm}>
+        <form className={cl.SearchForm} onSubmit={this.searchSubmit}>
           <button type="submit" className={cl.SearchFormButton}>
             <span className={cl.SearchFormButtonLabel}>Search</span>
           </button>
