@@ -18,20 +18,3 @@ const Loader = () => {
 };
 
 export default Loader;
-
-//   loadMoreImgs = () => {
-//     const { searchQuery } = this.props;
-//     const { page, perPage } = this.state;
-//     console.log('Click');
-//     this.setState({ isLoading: true });
-//     getImages({ searchQuery, page, perPage })
-//       .then(images => {
-//         this.setState(prevState => ({
-//           images: [...prevState.images, ...images.hits],
-//           page: prevState.page + 1,
-//         }));
-//       })
-//       .finally(() => {
-//         this.setState({ isLoading: false });
-//       });
-//   };
