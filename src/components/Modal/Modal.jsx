@@ -24,7 +24,6 @@ class Modal extends React.Component {
 
   render() {
     const { largeImageURL } = this.props;
-    console.log(largeImageURL);
 
     return (
       <div className={cl.Overlay} onClick={this.handleBackdropClick}>

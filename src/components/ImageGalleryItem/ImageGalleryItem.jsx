@@ -15,24 +15,4 @@ const ImageGalleryItem = ({ imageUrl, onClick }) => {
   );
 };
 
-// class ImageGalleryItem extends Component {
-//   render() {
-//     const { images, onClick } = this.props;
-//     return images.map(({ id, webformatURL, largeImageURL }) => {
-//       return (
-//         <li key={id} className={cl.ImageGalleryItem}>
-//           <img
-//             className={cl.ImageGalleryItemImage}
-//             src={webformatURL}
-//             alt=""
-//             onClick={() => {
-//               onClick(largeImageURL);
-//             }}
-//           />
-//         </li>
-//       );
-//     });
-//   }
-// }
-
 export default ImageGalleryItem;
