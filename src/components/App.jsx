@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import cl from './app.module.css';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
-import debounce from 'lodash.debounce';
 
 export class App extends Component {
   state = {
