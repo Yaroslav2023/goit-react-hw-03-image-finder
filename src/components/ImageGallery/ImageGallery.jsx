@@ -27,7 +27,6 @@ class ImageGallery extends React.Component {
         page: this.state.page,
         perPage: this.state.perPage,
       });
-      console.log(data);
       this.setState({ images: data.hits, totalImages: data.hits.length });
     }
   }
@@ -59,12 +58,13 @@ class ImageGallery extends React.Component {
     return (
       <div>
         <ul className={cl.ImageGallery}>
-          <ImageGalleryItem
-            images={this.state.images}
-            onClick={() =>
-              this.handleImageClick(this.state.images.largeImageURL)
-            }
-          />
+          {this.state.images.map(({ id, webformatURL, largeImageURL }) => (
+            <ImageGalleryItem
+              key={id}
+              imageUrl={webformatURL}
+              onClick={() => this.handleImageClick(largeImageURL)}
+            />
+          ))}
         </ul>
         {this.state.isLoading && <Loader />}
         {this.state.totalImages === 12 && (
