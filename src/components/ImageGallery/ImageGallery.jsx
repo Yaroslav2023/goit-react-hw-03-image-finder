@@ -24,10 +24,14 @@ class ImageGallery extends React.Component {
     if (prevProps.searchQuery !== this.props.searchQuery) {
       const data = await getImages({
         searchQuery: this.props.searchQuery,
-        page: this.state.page,
+        page: 1,
         perPage: this.state.perPage,
       });
-      this.setState({ images: data.hits, totalImages: data.hits.length });
+      this.setState({
+        images: data.hits,
+        totalImages: data.hits.length,
+        page: 1,
+      });
     }
   }
 
